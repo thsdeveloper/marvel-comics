@@ -1,19 +1,25 @@
-import { useColorMode } from '@chakra-ui/color-mode'
-import { Button } from '@chakra-ui/react'
-import { MdLightMode } from 'react-icons/md'
+import { IconButton } from '@chakra-ui/button'
+import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+import { useColorMode, useColorModeValue } from '@chakra-ui/color-mode'
 
 export default function ButtonColorMode() {
   const { colorMode, toggleColorMode } = useColorMode()
+  const iconColor = useColorModeValue('black', 'white')
+  const bgColor = useColorModeValue('blackAlpha', 'whiteAlpha')
 
   return (
     <>
-      <Button
+      <IconButton
+        variant="ghost"
+        icon={
+          colorMode === 'light' ? <MoonIcon /> : <SunIcon color={iconColor} />
+        }
+        fontSize="sm"
+        colorScheme={bgColor}
+        borderRadius="50%"
         onClick={toggleColorMode}
-        variant="outline"
-        leftIcon={<MdLightMode />}
-      >
-        {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button>
+        aria-label="theme_button"
+      />
     </>
   )
 }

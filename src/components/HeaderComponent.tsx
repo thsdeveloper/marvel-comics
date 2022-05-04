@@ -22,8 +22,8 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons'
-import unaadebPlayDark from '@public/img/UNAADEBPlayDark.png'
-import unaadebPlayLigth from '@public/img/UNAADEBPlayLigth.png'
+import unaadebPlayDark from '@public/img/marvel-logo.png'
+import unaadebPlayLigth from '@public/img/marvel-logo.png'
 import Image from 'next/image'
 import { useAuth } from '@src/contexts/AuthContext'
 import ButtonColorMode from '@src/components/ButtonColorMode'
@@ -77,8 +77,8 @@ export default function HeaderComponent() {
                       colorMode === 'dark' ? unaadebPlayDark : unaadebPlayLigth
                     }
                     alt="Logo da UNAADEB Brasília"
-                    height={29}
-                    width={188}
+                    height={52}
+                    width={130}
                   />
                 </Link>
               </NextLink>
@@ -300,40 +300,15 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Blog',
-    href: '/blog',
+    label: 'Characters',
+    href: '/characters',
   },
   {
-    label: 'Agendas',
-    href: '/agenda',
+    label: 'Comics',
+    href: '/comics',
   },
   {
-    label: 'Liderança',
-    href: '/leadership',
-  },
-  {
-    label: 'Usuários',
-    href: '/customers',
-  },
-  {
-    label: 'Admin',
-    href: '/admin',
-    children: [
-      {
-        label: 'Agendas e eventos',
-        subLabel: 'Consultar, alterar e excluir agenda',
-        href: '/admin/agenda',
-      },
-      {
-        label: 'Notícias',
-        subLabel: 'Gerencie as últimas notícias',
-        href: '/admin/blog',
-      },
-      {
-        label: 'Liderança',
-        subLabel: 'Gerencie a diretoria geral da UNAADEB',
-        href: '/admin/leadership',
-      },
-    ],
+    label: 'Series',
+    href: '/series',
   },
 ]

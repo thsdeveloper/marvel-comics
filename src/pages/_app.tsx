@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ChakraProvider } from '@chakra-ui/react'
-import FooterComponent from '@src/components/FooterComponent'
 import HeaderComponent from '@src/components/HeaderComponent'
 import { AuthProvider } from '@src/contexts/AuthContext'
 import { AlertProvider } from '@src/contexts/AlertContext'
@@ -22,7 +21,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="titla, meta, nextjs" />
         <meta name="author" content="Syamlal CM" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>UNAADEB Play - O app oficial da UNAADEB Brasília</title>
+        <title>
+          MARVEL COMICS - CRIE COISAS INCRÍVEIS COM O MUNDO MARVEL COMIC
+        </title>
       </Head>
       <ChakraProvider>
         <AlertProvider>
@@ -32,7 +33,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
               {/*// @ts-ignore*/}
               <Component {...pageProps} />
-              <FooterComponent />
             </AuthProvider>
           </ModalDialogContextProvider>
         </AlertProvider>
