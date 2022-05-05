@@ -1,12 +1,6 @@
-<p align="center">
-  <a href="https://app.unaadeb.com.br" target="_blank">
-    <img alt="amplication-logo" height="30" alt="Amplication Logo" src="http://localhost:3000/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FUNAADEBPlayLigth.59ec0f9a.png&w=256&q=75"/>
-  </a>
-</p>
-
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started - UNAADEB Gerenciador Play
+## Getting Started - Marvel Comics API with NextJs
 
 First, run the development server:
 

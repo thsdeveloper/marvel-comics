@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import Head from 'next/head'
 import {
   Container,
@@ -14,15 +14,31 @@ import {
   Grid,
   GridItem,
 } from '@chakra-ui/react'
+import { MdFavoriteBorder } from 'react-icons/md'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import useSWR from 'swr'
+import { addFavorites } from '@src/store/charactersSlice'
+import { useDispatch } from 'react-redux'
+import AlertContext from '@src/contexts/AlertContext'
 
 export default function CharacterPage() {
+  const alert = useContext(AlertContext)
+  const dispatch = useDispatch()
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
 
   const { id } = router.query
+
+  const handleFavorite = async (character) => {
+    await setLoading(true)
+    await setTimeout(() => {
+      dispatch(addFavorites(character))
+      alert.success('Adicionado aos favoritos com sucesso')
+      setLoading(false)
+    }, 2000)
+  }
 
   const fetcher = (url) => axios.get(url).then((res) => res.data)
 
@@ -104,6 +120,16 @@ export default function CharacterPage() {
                   ? character.description
                   : 'No brief description available for this character. Check out the information links below.'}
               </Text>
+              <Button
+                variant="outline"
+                mr={2}
+                onClick={() => handleFavorite(character)}
+                leftIcon={<MdFavoriteBorder />}
+                isLoading={loading}
+                loadingText="Adicionando..."
+              >
+                Adicionar favorito
+              </Button>
               {character.urls.map((link) => (
                 <Link
                   key={link.url}

@@ -311,4 +311,12 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Series',
     href: '/series',
   },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/thsdeveloper/marvel-comics',
+  },
+  {
+    label: 'Marvel Comics Developer',
+    href: 'https://developer.marvel.com/',
+  },
 ]
